@@ -1,5 +1,9 @@
 [build]
-  builder = "backend/Dockerfile"
-
-[deploy]
-  start = "gunicorn core.wsgi:application --bind 0.0.0.0:8000"
+builder = "DOCKERFILE"
+dockerfilePath = "backend/Dockerfile"
+watchPatterns = [
+    "requirements.txt", 
+    "src/**", 
+    "railway.toml",
+    "Dockerfile",
+]
