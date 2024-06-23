@@ -14,19 +14,12 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Create a new user and change the ownership of the /app directory
-RUN useradd -ms /bin/bash myuser
-RUN chown -R myuser:myuser /app/
-
-# Switch to the new user
-USER myuser
-
 # Install Python dependencies
 COPY backend/requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the Django project files
-COPY . /app/
+COPY /backend/* /app/
 
 # Collect static files
 RUN python manage.py collectstatic --noinput --verbosity 2
