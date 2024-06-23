@@ -22,7 +22,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app/
 
 # Collect static files
-RUN python backend/manage.py collectstatic --noinput
+RUN python manage.py collectstatic --noinput
 
 # Expose the port that the app runs on
 EXPOSE 8000
