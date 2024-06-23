@@ -21,11 +21,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the entire backend directory structure
 COPY backend/ /app/
 
-# Collect static files
-RUN python manage.py collectstatic --noinput --verbosity 2
-
-# Expose the port that the app runs on
-EXPOSE 8000
-
-# Run the Django application
-CMD ["gunicorn", "core.wsgi:application", "--bind", "0.0.0.0:8000"]
+# Execute Django commands and start Gunicorn server
+CMD ["sh", "-c", "python manage.py collectstatic --noinput && python manage.py makemigrations && python manage.py migrate && gunicorn core.wsgi:application"]
