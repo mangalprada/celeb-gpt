@@ -7,14 +7,22 @@ __pycache__/
 .env
 
 # Node.js (React)
-fe/node_modules/
-fe/build/
-fe/.env
-fe/.DS_Store
-fe/npm-debug.log*
-fe/yarn-debug.log*
-fe/yarn-error.log*
-fe/.next/
+frontend
+/node_modules/
+frontend
+/build/
+frontend
+/.env
+frontend
+/.DS_Store
+frontend
+/npm-debug.log*
+frontend
+/yarn-debug.log*
+frontend
+/yarn-error.log*
+frontend
+/.next/
 
 # Django
 be/env/
@@ -138,5 +146,7 @@ be/static/
 be/media/
 
 # Custom React
-fe/node_modules/
-fe/build/
+frontend
+/node_modules/
+frontend
+/build/
