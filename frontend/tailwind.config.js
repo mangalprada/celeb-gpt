@@ -21,6 +21,22 @@ export default {
             letterSpacing: '0.4px',
           },
         ],
+        large: [
+          '3rem',
+          {
+            fontWeight: '900',
+            lineHeight: '1.3',
+            letterSpacing: '0.6px',
+          },
+        ],
+        extraLarge: [
+          '6rem',
+          {
+            fontWeight: '900',
+            lineHeight: '1.3',
+            letterSpacing: '0.6px',
+          },
+        ],
         h2: [
           '1.625rem',
           {

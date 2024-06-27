@@ -80,3 +80,17 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.developers {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  top: -95px;
+  background: -webkit-linear-gradient(bottom, transparent 18%, #000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
+  transition: all 2s ease;
+}

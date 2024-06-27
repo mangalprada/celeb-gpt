@@ -1,11 +1,10 @@
-// import React from 'react';
-// import paul from 'assets/illustrations/paul.png';
-// import yCombinator from 'assets/illustrations/yCombinator.jpeg';
+import paul from 'assets/illustrations/paul.jpeg';
 import { useNavigate } from 'react-router-dom';
 import 'src/index.css';
 import Header from '../Header';
 import Button from 'src/components/Button';
 import ContactUs from 'src/components/ContactUs';
+import './styles.css';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -18,15 +17,25 @@ const LandingPage = () => {
     <div className='flex flex-col w-full h-full  mesh-test-animate'>
       <Header />
 
-      <div className='h-full w-full flex items-center justify-center'>
-        {/* <img src={paul} className='w-[50%] h-[50%]' /> */}
+      <div className='h-full w-full flex flex-col md:flex-row items-center gap-10 justify-center duration-300'>
+        <img
+          src={paul}
+          width={500}
+          className='mb-10 rounded-3xl'
+          loading='lazy'
+        />
 
-        <div className='flex w-full items-center flex-col p-4'>
-          <span className='md:text-[80px] text-[50px] font-bold text-black'>
-            Paul Graham
-          </span>
+        <div className='flex items-center flex-col p-4'>
+          <div className='headline'>
+            <h2 className='backup-headline text-primaryText font-extrabold text-large md:text-extraLarge leading-[120px] md:leading-none'>
+              Paul
+            </h2>
+            <h2 className='main-headline text-primaryText font-extrabold text-large md:text-extraLarge leading-none'>
+              Graham
+            </h2>
+          </div>
 
-          <span className='text-lg text-primaryText text-center'>
+          <span className='text-lg max-w-[250px] text-primaryText flex flex-wrap text-center'>
             Startup kingmaker, Lisp lover, and essayist extraordinaire
           </span>
 

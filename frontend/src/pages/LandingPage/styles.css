@@ -1,8 +1,36 @@
-.container{
-    /*
+.container {
+  /*
 * Created with https://www.css-gradient.com
 * Gradient link: https://www.css-gradient.com/?c1=f5f5ee&c2=fb661e&gt=r&gd=dtl
 */
-background: #F5F5EE;
-background: radial-gradient(at left top, #F5F5EE, #FB661E);
+  background: #f5f5ee;
+  background: radial-gradient(at left top, #f5f5ee, #fb661e);
+}
+
+.headline {
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.main-headline {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+
+.backup-headline {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  top: -70px;
+  background: -webkit-linear-gradient(bottom, transparent 10%, #1b2733 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
+  transition: all 0.5s ease;
 }
