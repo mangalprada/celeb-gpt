@@ -1,10 +1,11 @@
-import React from 'react';
-import paul from 'assets/illustrations/paul.png';
-import yCombinator from 'assets/illustrations/yCombinator.jpeg';
+// import React from 'react';
+// import paul from 'assets/illustrations/paul.png';
+// import yCombinator from 'assets/illustrations/yCombinator.jpeg';
 import { useNavigate } from 'react-router-dom';
 import 'src/index.css';
 import Header from '../Header';
 import Button from 'src/components/Button';
+import ContactUs from 'src/components/ContactUs';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -36,6 +37,8 @@ const LandingPage = () => {
           />
         </div>
       </div>
+
+      {false && <ContactUs />}
     </div>
   );
 };
