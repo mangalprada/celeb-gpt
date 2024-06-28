@@ -8,7 +8,9 @@ const Button = (props) => {
     primary = true,
     secondary = false,
     styles = '',
+    primaryBtnStyles = '',
     magicalButton = false,
+    textButton = false,
   } = props;
 
   if (magicalButton) {
@@ -27,22 +29,20 @@ const Button = (props) => {
   }
 
   return (
-    <div
+    <button
       onClick={handleClick}
-      className={`${styles} cursor-pointer hover:font-bold`}
+      className={twMerge(
+        'text-primaryText px-4 py-2 rounded-[50px] cursor-pointer hover:font-bold w-fit',
+        primary &&
+          `bg-whiteSmoke duration-200 hover:shadow-xl shadow-silver-200 ${primaryBtnStyles}`,
+        secondary &&
+          'border-2 border-gray-200 bg-transparent hover:border-orange',
+        textButton && 'bg-transparent',
+        styles
+      )}
     >
-      <span
-        className={twMerge(
-          'text-primaryText px-4 py-2  rounded-[50px]',
-          primary &&
-            'bg-whiteSmoke duration-200 mix-blend-overlay hover:mix-blend-normal hover:shadow-xl shadow-silver-200 ',
-          secondary &&
-            'border-2 border-whiteSmoke text-whiteSmoke bg-transparent'
-        )}
-      >
-        {buttonText}
-      </span>
-    </div>
+      {buttonText}
+    </button>
   );
 };
 
@@ -53,6 +53,8 @@ Button.propTypes = {
   secondary: PropTypes.bool,
   styles: PropTypes.string,
   magicalButton: PropTypes.bool,
+  primaryBtnStyles: PropTypes.string,
+  textButton: PropTypes.bool,
 };
 
 export default Button;
