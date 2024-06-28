@@ -1,8 +1,4 @@
 .container {
-  /*
-* Created with https://www.css-gradient.com
-* Gradient link: https://www.css-gradient.com/?c1=f5f5ee&c2=fb661e&gt=r&gd=dtl
-*/
   background: #f5f5ee;
   background: radial-gradient(at left top, #f5f5ee, #fb661e);
 }

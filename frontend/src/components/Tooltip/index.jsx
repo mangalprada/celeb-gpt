@@ -16,7 +16,6 @@ const ToolTip = ({ children, tooltip, position }) => {
             sideOffset={5}
           >
             {tooltip}
-            {/* <Tooltip.Arrow className='TooltipArrow' /> */}
           </Tooltip.Content>
         </Tooltip.Portal>
       </Tooltip.Root>
