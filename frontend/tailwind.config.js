@@ -6,7 +6,7 @@ export default {
     extend: {
       colors: {
         whiteSmoke: '#F5F5EE',
-        primaryText: '#27272A',
+        primaryText: '#1B2733',
         orange: {
           DEFAULT: '#ee5420',
           light: '#ee5420',
@@ -21,6 +21,22 @@ export default {
             letterSpacing: '0.4px',
           },
         ],
+        large: [
+          '3rem',
+          {
+            fontWeight: '900',
+            lineHeight: '1.3',
+            letterSpacing: '0.6px',
+          },
+        ],
+        extraLarge: [
+          '6rem',
+          {
+            fontWeight: '900',
+            lineHeight: '1.3',
+            letterSpacing: '0.6px',
+          },
+        ],
         h2: [
           '1.625rem',
           {
@@ -30,43 +46,11 @@ export default {
           },
         ],
         h3: [
-          '1.375rem',
-          {
-            fontWeight: '400',
-            lineHeight: '1.59',
-            letterSpacing: '0.5px',
-          },
-        ],
-        h4: [
           '1.25rem',
           {
             fontWeight: '400',
             lineHeight: '1.6',
             letterSpacing: '0.5px',
-          },
-        ],
-        h5: [
-          '1.125rem',
-          {
-            fontWeight: '400',
-            lineHeight: '1.56',
-            letterSpacing: '0.4px',
-          },
-        ],
-        h6: [
-          '1rem',
-          {
-            fontWeight: '400',
-            lineHeight: '1.56',
-            letterSpacing: '0.4px',
-          },
-        ],
-        h7: [
-          '0.5625rem',
-          {
-            fontWeight: '400',
-            lineHeight: '1.56',
-            letterSpacing: '0.4px',
           },
         ],
       },

@@ -59,3 +59,38 @@ body {
     background-position: 0% 20%;
   }
 }
+
+.hire-us {
+  background: rgb(238, 84, 32);
+  background: radial-gradient(
+    circle,
+    rgba(238, 84, 32, 1) 0%,
+    rgba(245, 245, 238, 1) 86%,
+    rgba(245, 245, 238, 1) 100%
+  );
+}
+
+.contact-us {
+  background-color: rgba(190, 186, 186, 0.4);
+  /* -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px); */
+  padding: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.developers {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  top: -95px;
+  background: -webkit-linear-gradient(bottom, transparent 18%, #000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
+  transition: all 2s ease;
+}

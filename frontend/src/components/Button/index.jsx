@@ -35,7 +35,7 @@ const Button = (props) => {
         className={twMerge(
           'text-primaryText px-4 py-2  rounded-[50px]',
           primary &&
-            'bg-whiteSmoke duration-200 hover:mix-blend-overlay hover:shadow-xl shadow-silver-200 ',
+            'bg-whiteSmoke duration-200 mix-blend-overlay hover:mix-blend-normal hover:shadow-xl shadow-silver-200 ',
           secondary &&
             'border-2 border-whiteSmoke text-whiteSmoke bg-transparent'
         )}

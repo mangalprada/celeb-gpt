@@ -1,7 +1,8 @@
-import monishaPhoto from 'assets/illustrations/Monisha_Tarkar.jpeg';
+import monishaPhoto from 'assets/illustrations/monishaMemoji.png';
 import linkedInIcon from 'assets/icons/linkedin.svg';
 import githubIcon from 'assets/icons/github.svg';
 import earthIcon from 'assets/icons/earth.svg';
+import emailIcon from 'assets/icons/email.svg';
 
 export const developers = [
   {
@@ -9,7 +10,7 @@ export const developers = [
     role: 'BackendDeveloper',
     links: [],
     photoSrc: monishaPhoto,
-    bio: 'A frontend developer who loves creating seamless user experiences',
+    bio: 'A developer who loves creating seamless user experiences',
   },
   {
     name: 'Monisha Tarkar',
@@ -32,7 +33,11 @@ export const developers = [
         icon: earthIcon,
       },
     ],
+    email: {
+      id: 'monishatarkar1625@gmail.com',
+      icon: emailIcon,
+    },
     photoSrc: monishaPhoto,
-    bio: 'Passionate about creating seamless user experiences',
+    bio: 'Coffee-fueled developer on a mission to build seamless user experiences.',
   },
 ];

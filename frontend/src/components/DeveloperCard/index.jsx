@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import IconButton from '../IconButton';
+import Tooltip from '../Tooltip';
 
 const DeveloperCard = (props) => {
   const { developer } = props;
@@ -9,40 +10,57 @@ const DeveloperCard = (props) => {
     links = [],
     photoSrc,
     bio = '',
-    exp = '',
+    email = {},
   } = developer;
 
+  const copyToClipboard = (emailId) => {
+    navigator.clipboard.writeText(emailId);
+  };
+
   return (
-    <div className='flex flex-col gap-4 w-[320px] bg-white shadow-xl rounded-lg p-6 justify-between duration-500'>
-      <div className='flex items-center justify-between flex-col'>
-        <img src={photoSrc} className='rounded-[10px] bg-orange h-40 w-fit' />
+    <div className='flex rounded-2xl max-w-[450px] min-h-[220px] shadow-2xl items-center justify-between p-4 bg-whiteSmoke flex-wrap md:flex-nowrap'>
+      <img
+        src={photoSrc}
+        className='rounded-[10px] z-10 h-40 w-fit flex md:hidden'
+      />
 
-        <div className='flex flex-col w-full gap-4'>
-          <span className='text-h4 text-primayText'>{name}</span>
+      <div className='flex flex-col gap-2 text-sm text-orange'>
+        <span className='text-h3 text-primaryText'>
+          <strong>{name}</strong>
+        </span>
+        <span>{role}</span>
+        <span className='text-primaryText text-sm flex items-end'>{bio}</span>
 
-          <div className='flex flex-col'>
-            <div className='flex justify-between w-full'>
-              <span className='text-sm text-orange'>{role}</span>
-              <span className='text-sm text-orange'>{exp}</span>
-            </div>
-
-            <span className=''>{bio}</span>
+        <div className='flex flex-col mt-4 gap-2'>
+          <div className='flex items-center hover:cursor-pointer'>
+            <Tooltip tooltip='Copy to Clipboard!' position='bottom'>
+              <IconButton
+                icon={email.icon}
+                alt='email'
+                handleClick={() => copyToClipboard(email.id)}
+              />
+            </Tooltip>
+            {links.map((link) => {
+              return (
+                <Tooltip key={link.alt} tooltip={link.alt} position='bottom'>
+                  <IconButton
+                    key={link.alt}
+                    iconLink={link.iconLink}
+                    icon={link.icon}
+                    alt={link.alt}
+                    linkButton
+                  />
+                </Tooltip>
+              );
+            })}
           </div>
         </div>
       </div>
 
-      <div className='flex items-center'>
-        {links.map((link) => {
-          return (
-            <IconButton
-              key={link.alt}
-              iconLink={link.iconLink}
-              icon={link.icon}
-              alt={link.alt}
-            />
-          );
-        })}
-      </div>
+      <img
+        src={photoSrc}
+        className='rounded-[10px] z-10 h-40 w-fit hidden md:flex'
+      />
     </div>
   );
 };
