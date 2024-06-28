@@ -1,7 +1,5 @@
 export const setCookie = ({ cookieName, cookieValue }) => {
-  const expDate = new Date();
-  expDate.setDate(expDate.getDate() + 7);
-  document.cookie = `${cookieName}=${cookieValue};expires=${expDate.toUTCString()};path=/`;
+  document.cookie = `${cookieName}=${cookieValue};expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/`;
 };
 
 /**
