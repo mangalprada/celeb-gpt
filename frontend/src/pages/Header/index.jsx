@@ -13,7 +13,6 @@ const Header = () => {
     <Button
       handleClick={handleClick}
       buttonText='Hire Us!'
-      secondary
       magicalButton
       styles='w-full flex justify-end px-10 pt-5'
     />

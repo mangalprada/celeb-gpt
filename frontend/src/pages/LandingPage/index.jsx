@@ -3,11 +3,51 @@ import { useNavigate } from 'react-router-dom';
 import 'src/index.css';
 import Header from '../Header';
 import Button from 'src/components/Button';
-import ContactUs from 'src/components/ContactUs';
+import EmailModal from 'src/components/EmailModal';
 import './styles.css';
+import { useEffect, useState } from 'react';
+import { getCookie, setCookie } from 'src/helpers/cookies';
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const [showEmailModal, setShowEmailModal] = useState(false);
+  const [showEmailErr, setShowEmailErr] = useState(null);
+  const [email, setEmail] = useState('');
+
+  useEffect(() => {
+    setTimeout(() => {
+      const userEmail = getCookie({ cookieName: 'email' });
+
+      if (!userEmail) {
+        setShowEmailModal(true);
+      }
+    }, 1000);
+  }, []);
+
+  const validateEmail = (emailId) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailId || emailId.length === 0) {
+      return '* Email is required';
+    }
+
+    if (!regex.test(emailId)) {
+      return 'Invalid email format';
+    }
+
+    return null;
+  };
+
+  const handleEmailInput = () => {
+    const emailErr = validateEmail(email);
+
+    if (emailErr) {
+      setShowEmailErr(emailErr);
+    } else {
+      setCookie({ cookieName: 'email', cookieValue: email });
+      setShowEmailModal(false);
+    }
+  };
 
   const handleClick = () => {
     navigate('/paulGPT');
@@ -43,11 +83,20 @@ const LandingPage = () => {
             handleClick={handleClick}
             buttonText='Talk to him'
             styles='mt-10 font-bold'
+            primaryBtnStyles='mix-blend-overlay hover:mix-blend-normal'
           />
         </div>
       </div>
 
-      {false && <ContactUs />}
+      <EmailModal
+        showEmailModal={showEmailModal}
+        setShowEmailModal={setShowEmailModal}
+        handleEmailInput={handleEmailInput}
+        showEmailErr={showEmailErr}
+        setShowEmailErr={setShowEmailErr}
+        email={email}
+        setEmail={setEmail}
+      />
     </div>
   );
 };
