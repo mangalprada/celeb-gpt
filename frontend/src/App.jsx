@@ -9,10 +9,7 @@ import HireUs from './pages/HireUs';
 function App() {
   return (
     <BrowserRouter>
-      <div
-        className='flex flex-col w-full h-full bg-inherit bg-space'
-        // style={{ backgroundImage: `url(${landingPage})` }}
-      >
+      <div className='flex flex-col w-full h-full bg-inherit bg-space'>
         <Routes>
           <Route exact path='/' element={<LandingPage />} />
           <Route path='/paulGPT' element={<PaulGPT />} />

@@ -32,7 +32,7 @@ const LandingPage = () => {
     }
 
     if (!regex.test(emailId)) {
-      return 'Invalid email format';
+      return '* Invalid email format';
     }
 
     return null;

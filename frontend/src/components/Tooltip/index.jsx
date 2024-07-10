@@ -12,7 +12,7 @@ const ToolTip = ({ children, tooltip, position }) => {
         <Tooltip.Portal>
           <Tooltip.Content
             side={position}
-            className='rounded py-0.5 px-2 bg-[#334154] text-whiteSmoke text-xs shadow-lg TooltipContent'
+            className='rounded py-0.5 px-2 bg-[#334154] text-whiteSmoke text-xs shadow-lg TooltipContent z-[999]'
             sideOffset={5}
           >
             {tooltip}

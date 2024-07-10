@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import IconButton from '../IconButton';
 import Tooltip from '../Tooltip';
+import { twMerge } from 'tailwind-merge';
 
 const DeveloperCard = (props) => {
   const { developer } = props;
@@ -59,7 +60,10 @@ const DeveloperCard = (props) => {
 
       <img
         src={photoSrc}
-        className='rounded-[10px] z-10 h-40 w-fit hidden md:flex'
+        className={twMerge(
+          'rounded-[10px] z-10 h-40 w-fit hidden md:flex',
+          name === 'Mangalprada Malay' && 'scale-150'
+        )}
       />
     </div>
   );
